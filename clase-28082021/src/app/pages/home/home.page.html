@@ -1,11 +1,18 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+  <app-encabezado></app-encabezado>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-    Aquí estoy en el home
+<ion-content>
+  <ion-list *ngIf='listaPersonajes'>
+    <ion-item *ngFor='let personaje of listaPersonajes'> 
+      <ion-avatar slot="start">
+        <img [src]='personaje.image'>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ personaje.name }}</h2>
+        <h3>{{ personaje.homeworld }}</h3>
+      </ion-label>
+      <ion-icon class='ff' name='arrow-forward'(click)='goToDetalles(personaje)'></ion-icon>
+    </ion-item>           
+   </ion-list>
 </ion-content>

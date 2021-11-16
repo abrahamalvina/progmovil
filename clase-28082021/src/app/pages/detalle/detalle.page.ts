@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EncabezadoComponent } from 'src/app/components/encabezado/encabezado.component';
 
 @Component({
   selector: 'app-detalle',
