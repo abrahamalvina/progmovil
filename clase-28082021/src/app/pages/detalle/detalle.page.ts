@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EncabezadoComponent } from 'src/app/components/encabezado/encabezado.component';
+import { ActivatedRoute } from '@angular/router';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-detalle',
@@ -8,9 +10,16 @@ import { EncabezadoComponent } from 'src/app/components/encabezado/encabezado.co
 })
 export class DetallePage implements OnInit {
 
-  constructor() { }
+  personaje=null;
 
-  ngOnInit() {
+  constructor(private activatedRoute:ActivatedRoute) 
+  {
+      this.activatedRoute.queryParams.subscribe(params =>
+        {this.personaje = JSON.parse(params.personaje);});
   }
 
+  ngOnInit() 
+  {
+    console.log(this.personaje);
+  }
 }

@@ -1,7 +1,15 @@
 <ion-header>
     <app-encabezado></app-encabezado>
 </ion-header>
-
+    <ion-card>
+        <img [src]='personaje.image'/>
+    <ion-card-header>    
+        <ion-card-subtitle>{{personaje.homeworld}}</ion-card-subtitle>
+        <ion-card-title>{{personaje.name}}</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+        Más información en <i>{{personaje.wiki}}</i>
+    </ion-card-content>  
+    </ion-card>
 <ion-content>
-    Aqui estoy en el detalle
-</ion-content>
+   
